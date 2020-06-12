@@ -2,7 +2,7 @@ FROM php:7.3-fpm
 
 RUN apt update \
     && apt install -y apache2 \
-    && docker-php-ext-install pdo pdo_mysql \
+    && docker-php-ext-install pdo pdo_mysql opcache \
     && mkdir -p /code \
     && a2enmod proxy_fcgi rewrite \
     && mkdir -p /alloc/logs/ \
